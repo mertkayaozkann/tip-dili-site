@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support &amp; FAQ — Tıp Dili</title>
-  <meta name="description" content="Help, FAQ and contact for Tıp Dili — daily medical terms app. Subscriptions, restore, refunds, widget, reminders, levels, progress.">
+  <meta name="description" content="Help, FAQ and contact for Tıp Dili — daily medical terms app. Sign in with Apple, account deletion, subscriptions, restore, refunds, widget, reminders, levels, progress.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,6 +30,14 @@
       <p class="faint" style="margin:8px 0 0">Please include your device model, iOS version, and — for
         subscription issues — whether you purchased monthly or yearly. Do not send passwords or payment
         details; we never need them.</p>
+    </div>
+
+    <div class="note">
+      <strong>Two versions, two answers.</strong> Some answers below depend on which version you have
+      (you can see it at the bottom of the app's Profile screen). <strong>Version 1.0.1</strong> is the
+      version currently on the App Store: no accounts, everything on your device.
+      <strong>Version 2</strong> adds an account with Sign in with Apple. Where the answer differs, both
+      are given. As of 3 August 2026, version 2 has not been released.
     </div>
 
     <h2>Using the app</h2>
@@ -68,9 +76,15 @@
       to your level and interests. If it ever looks out of date, opening the app once refreshes it.</p>
 
     <h3>Does the app work offline?</h3>
-    <p>Yes. All content is bundled with the app; studying, quizzes, favorites, and the widget need no
-      internet. Only viewing prices and purchasing the subscription requires a connection to Apple's
-      App Store. See our <a href="privacy.html">Privacy Policy</a>.</p>
+    <p>Yes — the learning side is offline in both versions. All content is bundled with the app;
+      studying, quizzes, favorites, progress, and the widget need no internet.</p>
+    <ul>
+      <li><strong>Version 1.0.1:</strong> the only thing that needs a connection is viewing prices and
+        purchasing or restoring the subscription through Apple.</li>
+      <li><strong>From version 2:</strong> signing in and checking whether your Pro subscription is
+        active also need a connection, because that check is made on our server.</li>
+    </ul>
+    <p>See our <a href="privacy.html">Privacy Policy</a> for what is sent and what is not.</p>
 
     <h3>Are new terms coming?</h3>
     <p>Yes — new terms ship with app updates, and updates never break your progress: terms you have
@@ -86,17 +100,21 @@
     <h3>How do I subscribe, and what does it cost?</h3>
     <p>The paywall in the app shows the current monthly and yearly prices in your local currency
       (yearly is the best value). Payment is charged to your Apple&nbsp;ID; the subscription
-      auto-renews unless cancelled at least 24 hours before the end of the period.</p>
+      auto-renews unless cancelled at least 24 hours before the end of the period. From version 2 you
+      also need to be signed in for the subscription to unlock Pro (see below).</p>
 
     <h3>How do I cancel?</h3>
-    <p>Subscriptions are managed by Apple, not inside our servers:
-      <em>iOS Settings → your name → Subscriptions → Tıp Dili Pro → Cancel</em> (or App Store app →
-      profile photo → Subscriptions). Cancelling keeps Pro active until the period you already paid
-      for ends. Deleting the app does <strong>not</strong> cancel a subscription.</p>
+    <p>Billing is handled by Apple in both versions, so cancellation happens on Apple's side, never on
+      ours: <em>iOS Settings → your name → Subscriptions → Tıp Dili Pro → Cancel</em> (or App Store app
+      → profile photo → Subscriptions). Cancelling keeps Pro active until the period you already paid
+      for ends. Deleting the app does <strong>not</strong> cancel a subscription — and from version 2,
+      neither does deleting your account.</p>
 
     <h3>I subscribed before / on my other device — how do I get Pro back?</h3>
     <p>Make sure you are signed in with the same Apple&nbsp;ID, open the paywall and tap
-      <em>Restore purchases</em>. Pro unlocks immediately on any device using that Apple&nbsp;ID.</p>
+      <em>Restore purchases</em>. In version 1.0.1 that is all it takes. From version 2, also sign in to
+      your Tıp Dili account with Sign in with Apple — Pro is then recognised on any device where you
+      use the same Apple&nbsp;ID and the same account.</p>
 
     <h3>How do refunds work?</h3>
     <p>Payments are processed by Apple, so refunds are requested from Apple directly at
@@ -106,19 +124,62 @@
     <h3>Is Family Sharing supported?</h3>
     <p>Not currently — a Pro subscription applies to the purchasing Apple&nbsp;ID.</p>
 
-    <h2>Data &amp; accounts</h2>
+    <h2>Account &amp; data</h2>
 
     <h3>Do I need an account?</h3>
-    <p>No. There is no registration and no login; your Apple&nbsp;ID handles the optional subscription.</p>
+    <ul>
+      <li><strong>Version 1.0.1:</strong> no. There is no registration and no login; your Apple&nbsp;ID
+        handles the optional subscription.</li>
+      <li><strong>From version 2:</strong> not for the free app — the daily term, widget, and reminders
+        work without signing in. You do need an account for a Tıp Dili Pro subscription to unlock Pro,
+        because the entitlement check is made on our server.</li>
+    </ul>
 
-    <h3>Will my progress move to a new iPhone?</h3>
-    <p>Your preferences and progress are stored only on your device, so they transfer only if you set
-      up the new phone from a backup of the old one. Your <strong>subscription</strong> is tied to your
-      Apple&nbsp;ID and can always be restored (see above).</p>
+    <h3>How do I sign in? (version 2 onward)</h3>
+    <p>Open <em>Profile → Account &amp; Data</em>, open your account, then
+      <strong>Sign in with Apple</strong>. That
+      is the only sign-in method — there is no password and no e-mail-and-password registration, so
+      there is nothing to forget or leak. If you use Apple's <em>Hide My Email</em> option, the app
+      works exactly the same; we receive Apple's relay address instead of your real one. We ask Apple
+      only for your e-mail address, not your name.</p>
+
+    <h3>How do I delete my account? (version 2 onward)</h3>
+    <p>From inside the app: open <em>Profile → Account &amp; Data</em>, open your account, then choose
+      <em>Request account deletion</em> and confirm. No e-mail to us, no waiting on a queue. Your account is disabled immediately, and
+      once your record has been removed from the subscription infrastructure, your account and
+      everything linked to it (e-mail, account identifiers, subscription records) are permanently
+      deleted. <strong>This cannot be undone</strong> — signing in with Apple again later gives you a
+      new, empty account. Details are in the <a href="privacy.html">Privacy Policy</a>, section B6.</p>
+
+    <h3>Does deleting my account cancel my subscription?</h3>
+    <p><strong>No.</strong> Your subscription is a contract between you and Apple, and only you can
+      cancel it: <em>iOS Settings → your name → Subscriptions → Tıp Dili Pro → Cancel</em>. If you
+      delete your account without cancelling first, Apple will keep charging you and the app will not
+      be able to give you Pro for it. <strong>Cancel first, then delete the account.</strong> The same
+      is true of deleting the app: it cancels nothing.</p>
 
     <h3>How do I delete my data?</h3>
-    <p>Delete the app — everything it stored (name, preferences, favorites, progress) is permanently
-      removed with it. Nothing exists on our side to delete.</p>
+    <ul>
+      <li><strong>On your device (both versions):</strong> delete the app — everything it stored
+        (preferences, favorites, progress) is permanently removed with it.</li>
+      <li><strong>Version 1.0.1:</strong> that is all there is; nothing exists on our side to delete.</li>
+      <li><strong>From version 2:</strong> also delete your account in the app, as described above, to
+        remove the account data we hold. Deleting the app alone does not delete your account.</li>
+    </ul>
+
+    <h3>Will my progress move to a new iPhone?</h3>
+    <p>Your preferences and progress are stored only on your device in both versions, so they transfer
+      only if you set up the new phone from a backup of the old one. Your <strong>subscription</strong>
+      is tied to your Apple&nbsp;ID and can always be restored (see above); from version 2, sign in to
+      your account on the new phone as well.</p>
+
+    <h3>I have a question about my data — who do I write to?</h3>
+    <p>Write to <a href="mailto:iletisim@alandili.com">iletisim@alandili.com</a> from an address we can
+      reply to, and tell us what you need (a copy of your data, a correction, or a deletion). If you
+      signed in with Apple's <em>Hide My Email</em>, please write from that relay address, or tell us
+      which one it is — otherwise we cannot tell which account is yours, and we will not guess. Please
+      never send passwords or payment details. We reply without undue delay and in any case within
+      thirty days.</p>
 
     <div class="note">
       For educational purposes only. Tıp Dili does not provide diagnosis, treatment, dosage, or medical
@@ -138,6 +199,14 @@
       <p class="faint" style="margin:8px 0 0">Cihaz modelini, iOS sürümünü ve abonelik konularında
         aylık mı yıllık mı aldığını eklemen yeterli. Şifre veya ödeme bilgisi gönderme; bunlara hiçbir
         zaman ihtiyacımız olmaz.</p>
+    </div>
+
+    <div class="note">
+      <strong>İki sürüm, iki yanıt.</strong> Aşağıdaki bazı yanıtlar hangi sürümü kullandığına bağlıdır
+      (sürümü uygulamanın Profil ekranının altında görebilirsin). <strong>Sürüm 1.0.1</strong> App
+      Store'daki mevcut sürümdür: hesap yok, her şey cihazında. <strong>Sürüm 2</strong> ise Apple ile
+      Giriş'e dayalı bir hesap getirir. Yanıt değişiyorsa ikisi de verilmiştir. 3 Ağustos 2026
+      itibarıyla sürüm 2 henüz yayımlanmamıştır.
     </div>
 
     <h2>Uygulamayı kullanmak</h2>
@@ -176,9 +245,16 @@
       Güncel görünmüyorsa uygulamayı bir kez açmak yeniler.</p>
 
     <h3>Uygulama çevrimdışı çalışır mı?</h3>
-    <p>Evet. Tüm içerik uygulamanın içindedir; çalışma, testler, favoriler ve widget internet
-      istemez. Yalnızca abonelik fiyatlarını görmek ve satın almak Apple App Store bağlantısı
-      gerektirir. Bkz. <a href="privacy.html">Gizlilik Politikası</a>.</p>
+    <p>Evet — öğrenme tarafı her iki sürümde de çevrimdışıdır. Tüm içerik uygulamanın içindedir;
+      çalışma, testler, favoriler, ilerleme ve widget internet istemez.</p>
+    <ul>
+      <li><strong>Sürüm 1.0.1:</strong> bağlantı gerektiren tek şey, abonelik fiyatlarını görmek ve
+        Apple üzerinden satın almak veya geri yüklemektir.</li>
+      <li><strong>Sürüm 2'den itibaren:</strong> giriş yapmak ve Pro aboneliğinin etkin olup olmadığını
+        denetlemek de bağlantı ister; çünkü bu denetim sunucumuzda yapılır.</li>
+    </ul>
+    <p>Neyin gönderilip neyin gönderilmediği için bkz.
+      <a href="privacy.html">Gizlilik Politikası</a>.</p>
 
     <h3>Yeni terimler gelecek mi?</h3>
     <p>Evet — yeni terimler uygulama güncellemeleriyle gelir ve güncellemeler ilerlemeni asla bozmaz:
@@ -194,18 +270,21 @@
     <h3>Nasıl abone olurum, ücreti ne?</h3>
     <p>Uygulamadaki satın alma ekranı güncel aylık ve yıllık fiyatları kendi para biriminde gösterir
       (yıllık en avantajlısıdır). Ücret Apple&nbsp;Kimliğine yansıtılır; dönem bitiminden en az 24 saat
-      önce iptal edilmezse abonelik otomatik yenilenir.</p>
+      önce iptal edilmezse abonelik otomatik yenilenir. Sürüm 2'den itibaren aboneliğin Pro'yu açması
+      için ayrıca giriş yapmış olman gerekir (aşağıya bak).</p>
 
     <h3>Nasıl iptal ederim?</h3>
-    <p>Abonelikler bizde değil Apple'da yönetilir:
-      <em>iOS Ayarları → adın → Abonelikler → Tıp Dili Pro → İptal</em> (veya App Store uygulaması →
-      profil fotoğrafı → Abonelikler). İptal etsen bile ödediğin dönemin sonuna kadar Pro açık kalır.
-      Uygulamayı silmek aboneliği <strong>iptal etmez</strong>.</p>
+    <p>Faturalandırmayı her iki sürümde de Apple yürütür; dolayısıyla iptal bizde değil Apple tarafında
+      yapılır: <em>iOS Ayarları → adın → Abonelikler → Tıp Dili Pro → İptal</em> (veya App Store
+      uygulaması → profil fotoğrafı → Abonelikler). İptal etsen bile ödediğin dönemin sonuna kadar Pro
+      açık kalır. Uygulamayı silmek aboneliği <strong>iptal etmez</strong> — sürüm 2'den itibaren
+      hesabını silmek de iptal etmez.</p>
 
     <h3>Daha önce abone olmuştum / diğer cihazımda almıştım — Pro'yu nasıl geri getiririm?</h3>
     <p>Aynı Apple&nbsp;Kimliği ile giriş yaptığından emin ol, satın alma ekranını aç ve
-      <em>Satın alımları geri yükle</em>'ye dokun. Pro o Apple&nbsp;Kimliğini kullanan her cihazda anında
-      açılır.</p>
+      <em>Satın alımları geri yükle</em>'ye dokun. Sürüm 1.0.1'de bu kadarı yeterlidir. Sürüm 2'den
+      itibaren ayrıca Apple ile Giriş yaparak Tıp Dili hesabına da gir — Pro, aynı Apple&nbsp;Kimliğini
+      ve aynı hesabı kullandığın her cihazda tanınır.</p>
 
     <h3>İade nasıl olur?</h3>
     <p>Ödemeleri Apple işlediği için iade talebi doğrudan Apple'a yapılır:
@@ -215,19 +294,62 @@
     <h3>Aile Paylaşımı destekleniyor mu?</h3>
     <p>Şimdilik hayır — Pro aboneliği satın alan Apple&nbsp;Kimliği için geçerlidir.</p>
 
-    <h2>Veri ve hesaplar</h2>
+    <h2>Hesap ve veri</h2>
 
     <h3>Hesap açmam gerekiyor mu?</h3>
-    <p>Hayır. Kayıt ve giriş yoktur; isteğe bağlı aboneliği Apple&nbsp;Kimliğin yönetir.</p>
+    <ul>
+      <li><strong>Sürüm 1.0.1:</strong> hayır. Kayıt ve giriş yoktur; isteğe bağlı aboneliği
+        Apple&nbsp;Kimliğin yönetir.</li>
+      <li><strong>Sürüm 2'den itibaren:</strong> ücretsiz kullanım için gerekmez — günün terimi, widget
+        ve hatırlatıcılar giriş yapmadan çalışır. Tıp Dili Pro aboneliğinin Pro'yu açması için ise
+        hesap gerekir; çünkü hak denetimi sunucumuzda yapılır.</li>
+    </ul>
 
-    <h3>İlerlemem yeni iPhone'a taşınır mı?</h3>
-    <p>Tercihlerin ve ilerlemen yalnızca cihazında saklanır; yeni telefonu eskisinin yedeğinden
-      kurarsan taşınır. <strong>Aboneliğin</strong> ise Apple&nbsp;Kimliğine bağlıdır ve her zaman geri
-      yüklenebilir (yukarıya bak).</p>
+    <h3>Nasıl giriş yaparım? (sürüm 2 ve sonrası)</h3>
+    <p><em>Profil → Hesap ve Veri</em>'yi aç, hesabını aç, ardından <strong>Apple ile Giriş</strong>.
+      Tek giriş
+      yöntemi budur — parola yoktur, e-posta–parola kaydı yoktur; dolayısıyla unutulacak ya da
+      sızabilecek bir parola da yoktur. Apple'ın <em>E-postamı Gizle</em> seçeneğini kullanırsan
+      uygulama birebir aynı çalışır; bize gerçek adresin yerine Apple'ın yönlendirme adresi ulaşır.
+      Apple'dan yalnızca e-posta adresini isteriz, adını değil.</p>
+
+    <h3>Hesabımı nasıl silerim? (sürüm 2 ve sonrası)</h3>
+    <p>Uygulamanın içinden: <em>Profil → Hesap ve Veri</em>'yi aç, hesabını aç, ardından
+      <em>Hesabı silme talebi</em>'ni seçip onayla. Bize e-posta atmana ya da sırada beklemene gerek yok. Hesabın anında devre dışı kalır; kaydın
+      abonelik altyapısından kaldırıldığında da hesabın ve ona bağlı her şey (e-posta, hesap
+      tanımlayıcıları, abonelik kayıtları) kalıcı olarak silinir. <strong>Bu işlem geri alınamaz</strong>
+      — sonradan tekrar Apple ile giriş yaparsan yeni ve boş bir hesap açılır. Ayrıntılar için bkz.
+      <a href="privacy.html">Gizlilik Politikası</a>, B6.</p>
+
+    <h3>Hesabımı silmek aboneliğimi iptal eder mi?</h3>
+    <p><strong>Hayır.</strong> Aboneliğin seninle Apple arasındaki bir sözleşmedir ve yalnızca sen iptal
+      edebilirsin: <em>iOS Ayarları → adın → Abonelikler → Tıp Dili Pro → İptal</em>. Önce iptal etmeden
+      hesabını silersen Apple ücretlendirmeye devam eder ve uygulama bu abonelik karşılığında sana Pro
+      veremez. <strong>Önce iptal et, sonra hesabı sil.</strong> Aynısı uygulamayı silmek için de
+      geçerlidir: hiçbir şeyi iptal etmez.</p>
 
     <h3>Verilerimi nasıl silerim?</h3>
-    <p>Uygulamayı sil — sakladığı her şey (ad, tercihler, favoriler, ilerleme) onunla birlikte kalıcı
-      olarak silinir. Bizim tarafımızda silinecek hiçbir şey yoktur.</p>
+    <ul>
+      <li><strong>Cihazında (her iki sürüm):</strong> uygulamayı sil — sakladığı her şey (tercihler,
+        favoriler, ilerleme) onunla birlikte kalıcı olarak silinir.</li>
+      <li><strong>Sürüm 1.0.1:</strong> hepsi bu kadar; bizim tarafımızda silinecek bir şey yoktur.</li>
+      <li><strong>Sürüm 2'den itibaren:</strong> elimizdeki hesap verilerinin silinmesi için ayrıca
+        yukarıda anlatıldığı gibi hesabını da sil. Yalnızca uygulamayı silmek hesabını silmez.</li>
+    </ul>
+
+    <h3>İlerlemem yeni iPhone'a taşınır mı?</h3>
+    <p>Tercihlerin ve ilerlemen her iki sürümde de yalnızca cihazında saklanır; yeni telefonu eskisinin
+      yedeğinden kurarsan taşınır. <strong>Aboneliğin</strong> ise Apple&nbsp;Kimliğine bağlıdır ve her
+      zaman geri yüklenebilir (yukarıya bak); sürüm 2'den itibaren yeni telefonda hesabına da giriş
+      yap.</p>
+
+    <h3>Verilerimle ilgili sorum var — kime yazmalıyım?</h3>
+    <p>Yanıt verebileceğimiz bir adresten <a href="mailto:iletisim@alandili.com">iletisim@alandili.com</a>
+      adresine yaz ve ne istediğini belirt (verilerinin bir kopyası, düzeltme veya silme). Apple'ın
+      <em>E-postamı Gizle</em> seçeneğiyle giriş yaptıysan lütfen o yönlendirme adresinden yaz ya da
+      hangisi olduğunu bize bildir; aksi hâlde hangi hesabın senin olduğunu ayırt edemeyiz ve tahmin
+      yürütmeyiz. Lütfen hiçbir zaman parola veya ödeme bilgisi gönderme. Talebini gecikmeksizin, her
+      hâlükârda otuz gün içinde yanıtlarız.</p>
 
     <div class="note">
       Yalnızca eğitim amaçlıdır. Tıp Dili tanı, tedavi, doz veya tıbbi tavsiye sunmaz. Klinik kararlar
