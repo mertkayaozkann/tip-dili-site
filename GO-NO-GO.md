@@ -56,6 +56,39 @@ Satır numaraları yaklaşıktır (`~`); metin düzenlendikçe kayabilir, ilgili
 
 ---
 
+## Kalıcı kural — analitik (analytics) açılırsa
+
+Bu bir merge kutusu **değildir**; bugün kapatılamaz, çünkü kapatılacak bir eksik yok. Süresiz
+yürürlükte kalan bağlayıcı bir kuraldır.
+
+**Bugünkü durum (doğrulandı):** uygulamada analitik SDK'sı **yok** — `medical-voc-app/TipDili`
+kaynağında (App/, Shared/, Widget/) analitik/çökme-raporlama SDK'sı geçmiyor; `project.yml`
+paket bağımlılıkları yalnızca AlanDiliCore + Supabase + RevenueCat; `Support/PrivacyInfo.xcprivacy`
+`NSPrivacyTracking=false` ve üç veri tipinin üçü de `Tracking=false` / amaç yalnız AppFunctionality.
+
+**Neden kural gerekiyor:** arka uçta `public.profiles.analytics_user_id` kolonu **bugün hiçbir kod
+tarafından kullanılmıyor** (yalnızca şema testlerinde geçiyor) ama yorumu bir analitik tarafını
+açıkça öngörüyor — "Analytics tarafına auth kimliğini vermemek için üretilen ayrı pseudonymous
+kimlik (D11/D12)". Kaynak:
+`alan-dili-backend/supabase/migrations/20260715205143_wp_m2_profile_foundation.sql` (~130, ~143).
+
+Analitik herhangi bir biçimde açılırsa, aşağıdaki **dördü AYNI ANDA** güncellenir:
+
+1. `index.html` — "No tracking / Takip yok" maddesindeki analitik cümlesi (EN ~36, TR ~74).
+2. `privacy.html` — **B1** (EN ~91, TR ~315) ve gerekiyorsa **B3** veri listesi; EN + TR birlikte.
+3. `medical-voc-app/TipDili/Support/PrivacyInfo.xcprivacy` — toplanan veri tipleri ve izleme beyanı.
+4. App Store Connect **App Privacy** anketi.
+
+**Dördünden biri güncellenmeden analitik açılmaz.** Aynı sürümde gitmezlerse App Store beyanı, site
+metni ve gizlilik politikası birbirini yalanlar.
+
+**Not:** `index.html`'deki analitik cümlesi artık sürüm-kapsamlıdır ("as of version 2" /
+"sürüm 2 itibarıyla") — anlık durum beyanıdır, süresiz taahhüt değildir. Reklam, reklam tanımlayıcısı
+ve uygulamalar arası takip iddiaları kapsamsız kaldı; bunlar `privacy.html` B1'de sürüm 2 için de
+aynen taahhüt edildiği için tutarlıdır.
+
+---
+
 ## Kural
 
 Bu dal yayın kapısıdır. `main`'e doğrudan commit atılmaz ve merge yalnızca yukarıdaki dört kutunun
