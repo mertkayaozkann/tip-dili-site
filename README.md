@@ -8,3 +8,5 @@ Tıp Dili iOS uygulamasının herkese açık web sayfaları (GitHub Pages ile ba
 - `support.html` — destek & SSS / support & FAQ
 
 Yayın / live: https://mertkayaozkann.github.io/tip-dili-site/
+
+V2 metni yayına çıkmadan önce kapatılması gereken maddeler: [`GO-NO-GO.md`](GO-NO-GO.md).
