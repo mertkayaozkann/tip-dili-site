@@ -113,17 +113,33 @@ yalnız aboneliğin kendiliğinden iptal olmadığını söylüyor); uygulama ka
 16C-γ'ya bağlıyor. Uygulama "Apple erişimin kaldırıldı" benzeri bir şey söylüyorsa **ikisi birden**
 düzeltilir; biri düzeltilip diğeri bırakılmaz.
 
-**2. Arka uç gerçekten böyle davranıyor mu? — bugün HAYIR.**
-Bugünkü durum (doğrulandı, 2026-08-04): `alan-dili-backend` HEAD `40999d8`'de
-`finalize_account_deletion`, `apple_revocation_status` ∈ (`not_required`,`done`) değilse
-`'apple_revocation_pending'` döndürür ve **silmez**
-(`supabase/migrations/20260803011904_goal16b_backend_hardening.sql` ~615-617); süpürücü de
-`pending|failed` satırlara dokunmaz, yalnız kimliksiz sayar
-(`20260803231500_goal16c_deletion_chain_sweeper.sql` ~189, ~224). Yani revocation `failed`te kalırsa
-silme **bugün tamamlanmaz** ve site cümlesi arka ucun tutmadığı bir vaat olur. Bu cümle canlıya
-çıkmadan önce D-20260803-12'nin arka uç şeridi inmeli: revocation `failed`/`pending` iken de finalize
-tamamlanmalı, revocation borcu ayrıca izlenmeli. **İnmezse iki seçenek vardır: ya arka uç düzeltilir,
-ya cümle yayından önce geri alınır. Üçüncüsü yoktur.**
+**2. Arka uç gerçekten böyle davranıyor mu? — YEREL DALDA evet, HOSTED'DA hayır.**
+Bu madde bilerek commit hash'i anmaz; hash'ler bayatlar ve "hangi hash" sorusu yanlış sorudur.
+Bağlayıcı olan **davranış** ve o davranışın **hangi ortamda geçerli olduğudur**.
+
+**Yerel dal (`alan-dili-backend`, henüz push edilmemiş çalışma dalı) — davranış İNDİ.**
+`finalize_account_deletion`'ın revocation kapısı artık `apple_revocation_status` ∈
+(`not_required`, `done`, `unavailable`) kabul ediyor. `unavailable` "Apple erişimi iptal edildi"
+**demez**; "revocation borcu zaman aşımına uğradı, silme yine de yerine getirildi" der (TN3194).
+Buna eşlik eden saatlik eskalasyon işi, `provider_done` + (`pending`|`failed`) satırları
+`requested_at` üzerinden **24 saatlik sert taban** dolduktan sonra `unavailable`'a geçirip finalize'ı
+tetikliyor. Yani revocation `failed`te kalsa bile hesap siliniyor; azami gecikme eşik + kadans ≈
+25 saat. Kaynak (dosya adı — hash değil):
+`supabase/migrations/20260804134000_goal16c_revocation_debt_escalation.sql`.
+
+**Hosted (canlı Supabase projesi) — davranış İNMEDİ.**
+Hosted'ın uyguladığı son migration hâlâ `20260803011904` (2026-08-04'te salt-okunur
+`list_migrations` ile doğrulandı). Ne süpürücü (`20260803231500`) ne de borç zaman aşımı
+(`20260804134000`) hosted'da var. Kullanıcının gerçekten konuştuğu ortamda finalize,
+(`not_required`, `done`) dışındaki her durumu `'apple_revocation_pending'` ile reddediyor ve
+**silmiyor**. Site cümlesi bugün yayına çıkarsa, arka ucun **canlı** tarafının tutmadığı bir vaat olur.
+
+**Kapanış koşulu — ortama bakar, hash'e değil.** Arka uçta 24 saatlik borç zaman aşımı **yerel dalda
+mevcuttur; hosted'a uygulandığı doğrulanana kadar bu doğrulama KAPANMAZ.** Doğrulanması gerekenler:
+(a) borç zaman aşımı migration'ı hosted'da uygulanmış, (b) saatlik eskalasyon cron kaydı hosted'da
+canlı, (c) `ops_flags.wpm5a_deletion_escalation_enabled` hosted'da `true` (fail-closed kill-switch).
+Üçü birden doğrulanmadan cümle yayımlanmaz. **İki seçenek vardır: ya hosted'a uygulanır, ya cümle
+yayından önce geri alınır. Üçüncüsü yoktur.**
 
 **Bu iki doğrulama yapılmadan V2 metni yayımlanmaz.**
 
