@@ -89,6 +89,46 @@ aynen taahhüt edildiği için tutarlıdır.
 
 ---
 
+## Kalıcı kural — "Apple erişimi iptal edilemese de silme tamamlanır" cümlesi
+
+Bu da bir merge kutusu **değildir**; dört kutuluk kapı yapısı değişmedi. Süresiz yürürlükte kalan
+bağlayıcı bir kuraldır ve bu turda eklenen cümleye bağlıdır.
+
+**Dayanak:** Karar D-20260803-12 (2026-08-03) — Apple token revocation, silmenin **ön koşulu değil**,
+best-effort **borcudur**. Birincil kaynak (mimar tarafından tarayıcıdan doğrulandı):
+`https://developer.apple.com/documentation/technotes/tn3194-handling-account-deletions-and-revoking-tokens-for-sign-in-with-apple`
+
+**Eklenen cümle (EN + TR, dört yer):** `privacy.html` B6 liste maddesi (EN ~163, TR ~394);
+`support.html` hesap silme SSS'i (EN ~152, TR ~325). Cümlenin verdiği söz **hesabın silinmesidir**;
+"Apple erişimin kaldırıldı" sözü **verilmez**.
+
+Yayın öncesi **iki** doğrulama zorunludur:
+
+**1. Uygulama içi silme akışı metniyle (16C-γ) tutarlılık.**
+Bugünkü durum (doğrulandı, 2026-08-04): `medical-voc-app` HEAD `35ff244`,
+`TipDili/App/AccountView.swift` silme akışında Apple erişimi/revocation iddiası **yok** (onay metni
+yalnız aboneliğin kendiliğinden iptal olmadığını söylüyor); uygulama kaynağındaki tek "revocation"
+`StoreKitSubscriptionService.swift` ~24'teki `transaction.revocationDate`'tir (iade kontrolü, ilgisiz).
+16C-γ apple-only akışı uygulamaya indiğinde bu doğrulama **yeniden** yapılır — kutu 3 merge'ü zaten
+16C-γ'ya bağlıyor. Uygulama "Apple erişimin kaldırıldı" benzeri bir şey söylüyorsa **ikisi birden**
+düzeltilir; biri düzeltilip diğeri bırakılmaz.
+
+**2. Arka uç gerçekten böyle davranıyor mu? — bugün HAYIR.**
+Bugünkü durum (doğrulandı, 2026-08-04): `alan-dili-backend` HEAD `40999d8`'de
+`finalize_account_deletion`, `apple_revocation_status` ∈ (`not_required`,`done`) değilse
+`'apple_revocation_pending'` döndürür ve **silmez**
+(`supabase/migrations/20260803011904_goal16b_backend_hardening.sql` ~615-617); süpürücü de
+`pending|failed` satırlara dokunmaz, yalnız kimliksiz sayar
+(`20260803231500_goal16c_deletion_chain_sweeper.sql` ~189, ~224). Yani revocation `failed`te kalırsa
+silme **bugün tamamlanmaz** ve site cümlesi arka ucun tutmadığı bir vaat olur. Bu cümle canlıya
+çıkmadan önce D-20260803-12'nin arka uç şeridi inmeli: revocation `failed`/`pending` iken de finalize
+tamamlanmalı, revocation borcu ayrıca izlenmeli. **İnmezse iki seçenek vardır: ya arka uç düzeltilir,
+ya cümle yayından önce geri alınır. Üçüncüsü yoktur.**
+
+**Bu iki doğrulama yapılmadan V2 metni yayımlanmaz.**
+
+---
+
 ## Kural
 
 Bu dal yayın kapısıdır. `main`'e doğrudan commit atılmaz ve merge yalnızca yukarıdaki dört kutunun
