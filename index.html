@@ -3,6 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ── Güvenlik başlıkları · güvenlik turu adım 9 (2026-08-19) ──────────────
+       BARINDIRICI GERÇEĞİ: GitHub Pages özel yanıt başlığı eklemeye izin
+       vermez (`_headers`/`.htaccess` desteklenmez). Ölçüldü: yanıtta yalnız
+       `strict-transport-security` var, diğer beş başlık YOK. Bu yüzden CSP
+       ve referrer politikası HTML içinden veriliyor.
+
+       ⚠️ RAPOR MODU BU BARINDIRICIDA MÜMKÜN DEĞİL: `Content-Security-Policy-
+       Report-Only` yalnız HTTP BAŞLIĞI olarak geçerlidir, `<meta>` ile
+       verilemez. Onun yerine güvenlik ENUMERASYONLA sağlandı: bu sitelerde
+       0 `<script>`, 0 `<img>`, 0 `<iframe>`, 0 `<style>` bloğu, 0 dış yazı
+       tipi, CSS'te 0 `url()`/`@import` var; tek kaynak aynı köken
+       `style.css`. Satır içi `style="..."` kullanımları da CSS sınıflarına
+       taşındı, böylece `'unsafe-inline'` GEREKMİYOR. Politika tarayıcıda
+       ayrıca yürütülüp konsol ihlali olmadığı doğrulandı.
+
+       ⚠️ `frame-ancestors` <meta> ile verildiğinde tarayıcılar tarafından
+       YOK SAYILIR; `X-Frame-Options` da <meta> ile verilemez. Yani tıklama
+       hırsızlığı koruması bu barındırıcıda EKSİK KALIYOR (dürüstlük kaydı).
+       Hazır çözüm: depo kökündeki `_headers` dosyası — başlık destekleyen
+       bir barındırıcıya (Cloudflare/Netlify) geçildiği gün devreye girer.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Tıp Dili — Daily Medical Terms</title>
   <meta name="description" content="Learn the language of medicine — one clear term a day. Roots, etymology and English/Turkish equivalents on a calm, premium card. Offline learning, no tracking.">
   <link rel="stylesheet" href="style.css">
@@ -58,9 +81,9 @@
     <hr class="lang-divider">
 
     <!-- TR -->
-    <h2 style="margin-top:40px">Türkçe</h2>
+    <h2 class="u-mt40">Türkçe</h2>
     <span class="chip">iOS · İki dilli TR / EN</span>
-    <h1 style="margin-top:12px">Tıbbın dili, her gün bir terim.</h1>
+    <h1 class="u-mt12">Tıbbın dili, her gün bir terim.</h1>
     <p class="lead">Tıp terimleri için sakin, premium bir günlük kart — kök çözümleme, köken ve
       İngilizce/Türkçe karşılıklar. Aramalı bir sözlük değil, tanı aracı değil. Yalnızca her gün
       kaliteli bir terim; ana ekran widget'ı ve nazik bir hatırlatma ile.</p>

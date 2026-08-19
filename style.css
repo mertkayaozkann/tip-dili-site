@@ -202,3 +202,13 @@ footer.site a:hover { color: var(--accent-ink); }
   nav.site a { margin-left: 14px; font-size: 14px; }
   .wrap { padding: 28px 18px 60px; }
 }
+
+/* ── Güvenlik turu adım 9 (2026-08-19): satır içi `style="..."` yardımcıları ──
+   CSP `style-src 'self'` yazabilmek için satır içi stiller buraya taşındı.
+   `'unsafe-inline'` olmadan bir CSP, XSS'e karşı gerçekten koruyan tek biçim;
+   beş küçük margin kuralı uğruna o korumadan vazgeçilmez. */
+.u-m0   { margin: 0; }
+.u-mb12 { margin: 0 0 12px; }
+.u-mt8  { margin: 8px 0 0; }
+.u-mt12 { margin-top: 12px; }
+.u-mt40 { margin-top: 40px; }

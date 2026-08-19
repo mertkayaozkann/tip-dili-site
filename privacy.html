@@ -3,6 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ── Güvenlik başlıkları · güvenlik turu adım 9 (2026-08-19) ──────────────
+       BARINDIRICI GERÇEĞİ: GitHub Pages özel yanıt başlığı eklemeye izin
+       vermez (`_headers`/`.htaccess` desteklenmez). Ölçüldü: yanıtta yalnız
+       `strict-transport-security` var, diğer beş başlık YOK. Bu yüzden CSP
+       ve referrer politikası HTML içinden veriliyor.
+
+       ⚠️ RAPOR MODU BU BARINDIRICIDA MÜMKÜN DEĞİL: `Content-Security-Policy-
+       Report-Only` yalnız HTTP BAŞLIĞI olarak geçerlidir, `<meta>` ile
+       verilemez. Onun yerine güvenlik ENUMERASYONLA sağlandı: bu sitelerde
+       0 `<script>`, 0 `<img>`, 0 `<iframe>`, 0 `<style>` bloğu, 0 dış yazı
+       tipi, CSS'te 0 `url()`/`@import` var; tek kaynak aynı köken
+       `style.css`. Satır içi `style="..."` kullanımları da CSS sınıflarına
+       taşındı, böylece `'unsafe-inline'` GEREKMİYOR. Politika tarayıcıda
+       ayrıca yürütülüp konsol ihlali olmadığı doğrulandı.
+
+       ⚠️ `frame-ancestors` <meta> ile verildiğinde tarayıcılar tarafından
+       YOK SAYILIR; `X-Frame-Options` da <meta> ile verilemez. Yani tıklama
+       hırsızlığı koruması bu barındırıcıda EKSİK KALIYOR (dürüstlük kaydı).
+       Hazır çözüm: depo kökündeki `_headers` dosyası — başlık destekleyen
+       bir barındırıcıya (Cloudflare/Netlify) geçildiği gün devreye girer.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Privacy Policy — Tıp Dili</title>
   <meta name="description" content="Tıp Dili privacy policy — version 1.0.1 (no accounts, all data on device) and version 2 onward (Sign in with Apple account; e-mail, user ID and purchase history only; no tracking). KVKK &amp; GDPR.">
   <link rel="stylesheet" href="style.css">
@@ -25,10 +48,10 @@
     <p class="faint">Last updated: 3 August 2026 · Applies to the iOS app "Tıp Dili" (bundle id <code>com.tipdili.app</code>) and its home-screen widget.</p>
 
     <div class="card">
-      <p style="margin:0 0 12px"><strong>Effective dates — which part applies to you.</strong> This
+      <p class="u-mb12"><strong>Effective dates — which part applies to you.</strong> This
         policy covers two versions of the app, and they handle data differently. You can see your
         version at the bottom of the app's Profile screen.</p>
-      <ul style="margin:0 0 12px">
+      <ul class="u-mb12">
         <li><strong>Version 1.0.1 — the version currently on the App Store</strong> (effective
           2 July 2026). No accounts, no server operated by us; everything stays on your device.
           <strong>Part A</strong> applies to you.</li>
@@ -37,7 +60,7 @@
           on the day you install version 2 — not before. As of the last-updated date above, version 2
           has not been released.</li>
       </ul>
-      <p style="margin:0"><strong>Part C</strong> applies to both versions.</p>
+      <p class="u-m0"><strong>Part C</strong> applies to both versions.</p>
     </div>
 
     <h2>Part A — Version 1.0.1 (currently on the App Store)</h2>
@@ -251,14 +274,14 @@
     <hr class="lang-divider">
 
     <!-- TÜRKÇE -->
-    <h1 style="margin-top:40px">Gizlilik Politikası</h1>
+    <h1 class="u-mt40">Gizlilik Politikası</h1>
     <p class="faint">Son güncelleme: 3 Ağustos 2026 · "Tıp Dili" iOS uygulaması (paket kimliği <code>com.tipdili.app</code>) ve ana ekran widget'ı için geçerlidir.</p>
 
     <div class="card">
-      <p style="margin:0 0 12px"><strong>Yürürlük — hangi bölüm size uygulanır?</strong> Bu politika
+      <p class="u-mb12"><strong>Yürürlük — hangi bölüm size uygulanır?</strong> Bu politika
         uygulamanın iki sürümünü kapsar ve bu sürümler veriyi farklı şekilde ele alır. Sürümünüzü
         uygulamanın Profil ekranının altında görebilirsiniz.</p>
-      <ul style="margin:0 0 12px">
+      <ul class="u-mb12">
         <li><strong>Sürüm 1.0.1 — App Store'daki mevcut sürüm</strong> (yürürlük: 2 Temmuz 2026).
           Hesap yok, bize ait sunucu yok; her şey cihazınızda kalır. Size <strong>A Bölümü</strong>
           uygulanır.</li>
@@ -267,7 +290,7 @@
           kurduğunuz gün yürürlüğe girer — öncesinde değil. Yukarıdaki güncelleme tarihi itibarıyla
           sürüm 2 henüz yayımlanmamıştır.</li>
       </ul>
-      <p style="margin:0"><strong>C Bölümü</strong> her iki sürüm için geçerlidir.</p>
+      <p class="u-m0"><strong>C Bölümü</strong> her iki sürüm için geçerlidir.</p>
     </div>
 
     <h2>A Bölümü — Sürüm 1.0.1 (App Store'daki mevcut sürüm)</h2>

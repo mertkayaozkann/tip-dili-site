@@ -3,6 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ── Güvenlik başlıkları · güvenlik turu adım 9 (2026-08-19) ──────────────
+       BARINDIRICI GERÇEĞİ: GitHub Pages özel yanıt başlığı eklemeye izin
+       vermez (`_headers`/`.htaccess` desteklenmez). Ölçüldü: yanıtta yalnız
+       `strict-transport-security` var, diğer beş başlık YOK. Bu yüzden CSP
+       ve referrer politikası HTML içinden veriliyor.
+
+       ⚠️ RAPOR MODU BU BARINDIRICIDA MÜMKÜN DEĞİL: `Content-Security-Policy-
+       Report-Only` yalnız HTTP BAŞLIĞI olarak geçerlidir, `<meta>` ile
+       verilemez. Onun yerine güvenlik ENUMERASYONLA sağlandı: bu sitelerde
+       0 `<script>`, 0 `<img>`, 0 `<iframe>`, 0 `<style>` bloğu, 0 dış yazı
+       tipi, CSS'te 0 `url()`/`@import` var; tek kaynak aynı köken
+       `style.css`. Satır içi `style="..."` kullanımları da CSS sınıflarına
+       taşındı, böylece `'unsafe-inline'` GEREKMİYOR. Politika tarayıcıda
+       ayrıca yürütülüp konsol ihlali olmadığı doğrulandı.
+
+       ⚠️ `frame-ancestors` <meta> ile verildiğinde tarayıcılar tarafından
+       YOK SAYILIR; `X-Frame-Options` da <meta> ile verilemez. Yani tıklama
+       hırsızlığı koruması bu barındırıcıda EKSİK KALIYOR (dürüstlük kaydı).
+       Hazır çözüm: depo kökündeki `_headers` dosyası — başlık destekleyen
+       bir barındırıcıya (Cloudflare/Netlify) geçildiği gün devreye girer.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Support &amp; FAQ — Tıp Dili</title>
   <meta name="description" content="Help, FAQ and contact for Tıp Dili — daily medical terms app. Sign in with Apple, account deletion, subscriptions, restore, refunds, widget, reminders, levels, progress.">
   <link rel="stylesheet" href="style.css">
@@ -25,9 +48,9 @@
     <p class="lead">Need help or have feedback? We usually reply within a few days.</p>
 
     <div class="card">
-      <p style="margin:0"><strong>Email:</strong>
+      <p class="u-m0"><strong>Email:</strong>
         <a href="mailto:iletisim@alandili.com">iletisim@alandili.com</a></p>
-      <p class="faint" style="margin:8px 0 0">Please include your device model, iOS version, and — for
+      <p class="faint u-mt8">Please include your device model, iOS version, and — for
         subscription issues — whether you purchased monthly or yearly. Do not send passwords or payment
         details; we never need them.</p>
     </div>
@@ -194,14 +217,14 @@
     <hr class="lang-divider">
 
     <!-- TÜRKÇE -->
-    <h1 style="margin-top:40px">Destek</h1>
+    <h1 class="u-mt40">Destek</h1>
     <p class="lead">Yardıma mı ihtiyacın var ya da geri bildirimin mi var? Genellikle birkaç gün içinde
       yanıtlıyoruz.</p>
 
     <div class="card">
-      <p style="margin:0"><strong>E-posta:</strong>
+      <p class="u-m0"><strong>E-posta:</strong>
         <a href="mailto:iletisim@alandili.com">iletisim@alandili.com</a></p>
-      <p class="faint" style="margin:8px 0 0">Cihaz modelini, iOS sürümünü ve abonelik konularında
+      <p class="faint u-mt8">Cihaz modelini, iOS sürümünü ve abonelik konularında
         aylık mı yıllık mı aldığını eklemen yeterli. Şifre veya ödeme bilgisi gönderme; bunlara hiçbir
         zaman ihtiyacımız olmaz.</p>
     </div>
