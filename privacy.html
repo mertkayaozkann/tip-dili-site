@@ -201,6 +201,30 @@
       your account, as described in B6. Records of subscription events that carry no identifier are
       kept for at most 90 days for reconciliation and then deleted. E-mail correspondence follows
       C2.</p>
+    <p>When you delete your account we remove your identifier and your e-mail address from every
+      place they are stored on our servers &mdash; including our sign-in service&rsquo;s security log,
+      which is cleared in the same operation. Below is what does <strong>not</strong> disappear at
+      that moment, and why.</p>
+    <ul>
+      <li><strong>An anonymous record that a deletion happened.</strong> We keep the date, a
+        result code and counts &mdash; no identifier, no e-mail address, no hash of either. We cannot
+        tell from it whose account it was. It is kept indefinitely so we can show that deletion
+        requests are actually carried out.</li>
+      <li><strong>Subscription event records with no identifier</strong> (as above): at most 90
+        days.</li>
+      <li><strong>Server backups.</strong> A backup taken <em>before</em> your deletion still
+        contains your data until that backup expires. Backups are encrypted, held for at most
+        30 days, and are not used for day-to-day operations. If we ever had to restore one, we
+        re-apply every deletion that was carried out after the backup was taken.</li>
+      <li><strong>Short-lived technical logs.</strong> Our infrastructure provider keeps platform
+        logs for up to 1 day. Our own diagnostic lines are written masked (only the first few
+        characters of any identifier).</li>
+      <li><strong>Records held by Apple and by our subscription provider.</strong> We ask our
+        subscription provider to delete your subscriber record and we verify that it was deleted.
+        Purchase and billing records held by <strong>Apple</strong> are Apple&rsquo;s own and are
+        governed by Apple&rsquo;s privacy policy, not ours &mdash; we cannot delete them. The same
+        applies to any record Apple keeps of your use of Sign in with Apple.</li>
+    </ul>
 
     <h3>B8. Legal bases (GDPR / KVKK)</h3>
     <ul>
@@ -433,6 +457,29 @@
     <p>Hesap verileri (B3) hesabınız var olduğu sürece tutulur ve B6'da anlatıldığı gibi hesabınızı
       sildiğinizde silinir. Hiçbir tanımlayıcı taşımayan abonelik olay kayıtları mutabakat amacıyla en
       fazla 90 gün tutulur ve sonra silinir. E-posta yazışmaları için C2 geçerlidir.</p>
+    <p>Hesabınızı sildiğinizde tanımlayıcınız ve e-posta adresiniz sunucularımızda tutuldukları
+      <em>her</em> yerden kaldırılır &mdash; giriş servisimizin güvenlik günlüğü de aynı işlemde
+      temizlenir. Aşağıdakiler o anda <strong>kaybolmayanlardır</strong>; nedenleriyle birlikte:</p>
+    <ul>
+      <li><strong>Bir silme işleminin gerçekleştiğine dair kimliksiz kayıt.</strong> Tarih, sonuç
+        kodu ve sayılar tutulur &mdash; tanımlayıcı yok, e-posta yok, ikisinin özeti (hash) de yok.
+        Bu kayıttan hesabın kime ait olduğu anlaşılamaz. Silme taleplerinin gerçekten yerine
+        getirildiğini gösterebilmek için süresiz saklanır.</li>
+      <li><strong>Tanımlayıcı taşımayan abonelik olay kayıtları</strong> (yukarıdaki gibi): en fazla
+        90 gün.</li>
+      <li><strong>Sunucu yedekleri.</strong> Silmenizden <em>önce</em> alınmış bir yedek, o yedek
+        imha edilene kadar verilerinizi taşımaya devam eder. Yedekler şifrelidir, en fazla 30 gün
+        tutulur ve günlük işleyişte kullanılmaz. Bir yedeği geri yüklemek zorunda kalırsak, yedeğin
+        alınmasından sonra yerine getirilmiş her silmeyi yeniden uygularız.</li>
+      <li><strong>Kısa ömürlü teknik günlükler.</strong> Altyapı sağlayıcımız platform günlüklerini
+        en fazla 1 gün tutar. Kendi teşhis satırlarımız maskeli yazılır (herhangi bir tanımlayıcının
+        yalnız ilk birkaç karakteri).</li>
+      <li><strong>Apple'ın ve abonelik sağlayıcımızın kendi kayıtları.</strong> Abonelik
+        sağlayıcımızdan abone kaydınızı silmesini ister ve silindiğini doğrularız. <strong>Apple</strong>
+        tarafında tutulan satın alma ve faturalandırma kayıtları Apple'a aittir ve bizim değil
+        Apple'ın gizlilik politikasına tabidir &mdash; onları silemeyiz. Apple'ın "Apple ile Giriş"
+        kullanımınıza dair tuttuğu kayıtlar için de aynısı geçerlidir.</li>
+    </ul>
 
     <h3>B8. Hukuki dayanaklar (KVKK / GDPR)</h3>
     <ul>
