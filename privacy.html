@@ -130,26 +130,38 @@
     </ul>
 
     <h3>B3. Data we collect and hold</h3>
-    <p>Exactly three kinds of data, all linked to your account, none used for tracking:</p>
+    <p>Six kinds of data, all linked to your account, <strong>none used for tracking</strong>:</p>
     <ul>
       <li><strong>Email</strong> — the address Apple provides at sign-in (which may be an Apple private
         relay address). Used to identify your account and, if necessary, to contact you about it.</li>
       <li><strong>UserID</strong> — the account identifier we generate for you, plus the identifiers
         needed to match your subscription. Used to link your device session to your account.</li>
+      <li><strong>DeviceID</strong> — an identifier we generate for each device you sign in on, so your
+        progress can be carried between your own devices. This is <em>not</em> an advertising
+        identifier and it is never shared for advertising.</li>
+      <li><strong>Product interaction</strong> — which terms you have seen, how you rated them, quiz
+        and practice results, study sessions and streak days. This is what makes spaced repetition
+        work and what lets your progress survive a lost or replaced phone.</li>
+      <li><strong>Your content</strong> — your favorites, your collections (including the names you
+        type for them), your chosen level and areas of interest.</li>
       <li><strong>PurchaseHistory</strong> — subscription status and the purchase events that produce
         it (start, renewal, expiry, cancellation), as reported to us by the payment infrastructure.
         Used solely to decide whether Pro is active for you.</li>
     </ul>
-    <p>This is the same disclosure we make on the App Store product page: these three data types are
+    <p>This is the same disclosure we make on the App Store product page: these data types are
       <em>linked to you</em> and <em>not used to track you</em>. We collect no other category — no
-      location, contacts, photos, health data, browsing history, or advertising data.</p>
+      location, contacts, photos, health data, browsing history, or advertising data. We run no
+      analytics, no crash reporting and no advertising SDKs of any kind.</p>
 
-    <h3>B4. What still stays on your device</h3>
-    <p>The learning side of the app remains local. Terms, definitions, and examples are bundled inside
-      the app; your favorites, collections, daily progress, streak, level, language, interests, and
-      reminder settings continue to live only on your device and are not uploaded to us. Studying,
-      quizzes, practice, and the widget keep working offline. What needs a connection is signing in
-      and checking your subscription.</p>
+    <h3>B4. What stays on your device</h3>
+    <p>The catalogue itself — every term, definition and example — is bundled inside the app, so
+      reading, studying, quizzes, practice and the widget keep working with no connection at all.
+      Your reminder time, appearance choice and language stay on the device and are not uploaded.</p>
+    <p><strong>What changed in version 2:</strong> in version 1.0.1 your favorites, collections and
+      progress lived only on the device and were lost with it. From version 2 they are also stored on
+      our server, tied to your account — that is what makes them survive a reinstall and appear on a
+      new phone. If you prefer them to stay only on the device, do not sign in: the daily term, the
+      widget and reminders all work without an account.</p>
 
     <h3>B5. Infrastructure we use</h3>
     <ul>
@@ -385,7 +397,7 @@
     </ul>
 
     <h3>B3. Topladığımız ve tuttuğumuz veriler</h3>
-    <p>Tam olarak üç tür veri; hepsi hesabınıza bağlıdır ve hiçbiri takip için kullanılmaz:</p>
+    <p>Altı tür veri; hepsi hesabınıza bağlıdır ve <strong>hiçbiri takip için kullanılmaz</strong>:</p>
     <ul>
       <li><strong>E-posta (Email)</strong> — Apple'ın girişte ilettiği adres (Apple özel yönlendirme
         adresi olabilir). Hesabınızı tanımlamak ve gerekirse hesabınızla ilgili size ulaşmak için
@@ -393,21 +405,33 @@
       <li><strong>Kullanıcı kimliği (UserID)</strong> — sizin için ürettiğimiz hesap tanımlayıcısı ve
         aboneliğinizi eşleştirmek için gereken tanımlayıcılar. Cihaz oturumunuzu hesabınıza bağlamak
         için kullanılır.</li>
+      <li><strong>Cihaz kimliği (DeviceID)</strong> — giriş yaptığınız her cihaz için ürettiğimiz
+        tanımlayıcı; ilerlemenizin kendi cihazlarınız arasında taşınabilmesi için kullanılır. Bu bir
+        <em>reklam kimliği değildir</em> ve reklam amacıyla asla paylaşılmaz.</li>
+      <li><strong>Ürün etkileşimi</strong> — hangi terimleri gördüğünüz, onları nasıl
+        değerlendirdiğiniz, test ve eşleştirme sonuçlarınız, çalışma oturumlarınız ve seri günleriniz.
+        Aralıklı tekrarın çalışmasını ve telefonunuzu kaybettiğinizde ilerlemenizin kaybolmamasını
+        sağlayan veri budur.</li>
+      <li><strong>Sizin içeriğiniz</strong> — favorileriniz, koleksiyonlarınız (adlarını siz
+        yazarsınız), seçtiğiniz seviye ve ilgi alanlarınız.</li>
       <li><strong>Satın alma geçmişi (PurchaseHistory)</strong> — abonelik durumu ve bu durumu oluşturan
         satın alma olayları (başlangıç, yenileme, bitiş, iptal); ödeme altyapısı tarafından bize
         bildirilir. Yalnızca Pro'nun sizde etkin olup olmadığına karar vermek için kullanılır.</li>
     </ul>
-    <p>App Store ürün sayfasında yaptığımız bildirim de aynıdır: bu üç veri türü <em>sizinle
+    <p>App Store ürün sayfasında yaptığımız bildirim de aynıdır: bu veri türleri <em>sizinle
       ilişkilendirilir</em> ve <em>sizi takip etmek için kullanılmaz</em>. Bunların dışında hiçbir
       kategori toplanmaz — konum, kişiler, fotoğraflar, sağlık verisi, gezinme geçmişi veya reklam
-      verisi yoktur.</p>
+      verisi yoktur. Hiçbir analitik, çökme raporlama veya reklam SDK'sı kullanmıyoruz.</p>
 
-    <h3>B4. Cihazınızda kalmaya devam edenler</h3>
-    <p>Uygulamanın öğrenme tarafı yerel kalır. Terimler, tanımlar ve örnekler uygulamanın içinde
-      gömülüdür; favorileriniz, koleksiyonlarınız, günlük ilerlemeniz, seriniz, seviyeniz, diliniz,
-      ilgi alanlarınız ve hatırlatıcı ayarlarınız yalnızca cihazınızda durmaya devam eder ve bize
-      yüklenmez. Çalışma, testler, pratik ve widget çevrimdışı çalışmayı sürdürür. Bağlantı gerektiren
-      şey giriş yapmak ve aboneliğinizi denetlemektir.</p>
+    <h3>B4. Cihazınızda kalanlar</h3>
+    <p>Katalogun kendisi — her terim, tanım ve örnek — uygulamanın içinde gömülüdür; bu yüzden okuma,
+      çalışma, testler, eşleştirme ve widget hiç bağlantı olmadan çalışmayı sürdürür. Hatırlatıcı
+      saatiniz, görünüm tercihiniz ve diliniz cihazınızda kalır, bize yüklenmez.</p>
+    <p><strong>Sürüm 2'de ne değişti:</strong> 1.0.1'de favorileriniz, koleksiyonlarınız ve
+      ilerlemeniz yalnızca cihazda yaşıyordu ve cihazla birlikte kayboluyordu. Sürüm 2'den itibaren
+      bunlar hesabınıza bağlı olarak sunucumuzda da saklanır — uygulamayı silip yeniden kurduğunuzda
+      ya da yeni bir telefona geçtiğinizde geri gelmesinin sebebi budur. Yalnızca cihazınızda kalmasını
+      tercih ediyorsanız giriş yapmayın: günün terimi, widget ve hatırlatıcılar hesapsız da çalışır.</p>
 
     <h3>B5. Kullandığımız altyapı</h3>
     <ul>
