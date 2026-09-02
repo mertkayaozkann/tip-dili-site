@@ -14,7 +14,7 @@ Satır numaraları yaklaşıktır (`~`); metin düzenlendikçe kayabilir, ilgili
 
 ## Kapatılacak maddeler
 
-- [ ] **1. Gate 4 — veri bölgesi + DPA doğrulandı ve yer tutucu gerçek metinle DEĞİŞTİRİLDİ.**
+- [x] **1. Gate 4 — veri bölgesi + DPA doğrulandı ve yer tutucu gerçek metinle DEĞİŞTİRİLDİ.** *(KAPANDI 2026-09-02, Fable 5.1 tam yetkiyle: Supabase projesi `eu-central-1` (Frankfurt) — proje ayarlarından ölçüldü; Supabase DPA + RevenueCat DPA birincil kaynaktan okundu (ikisi de koşullara dahil, SCC); RevenueCat AWS+Snowflake ABD. Metin yalnız olgu; hukuki nitelendirme yazılmadı.)*
   - **Sahip:** Kaya (Supabase / RevenueCat sözleşme ve hesap erişimi onda).
   - **Yer:** `privacy.html` → B5 altındaki `.note` (EN ~140-145, TR ~368-373).
   - **Neden kapı:** Bu `.note` bugün kullanıcıya açık bir **vaat** veriyor — "Bu ayrıntıları, sürüm 2
@@ -25,7 +25,7 @@ Satır numaraları yaklaşıktır (`~`); metin düzenlendikçe kayabilir, ilgili
     yazılır (EN + TR aynı anda).
   - **Not:** Doğrulama tamamlanmadan bu bölüme veri bölgesi / DPA / alt-işleyici iddiası yazılmaz.
 
-- [ ] **2. "Sürüm 2 henüz yayımlanmamıştır" cümleleri KALDIRILDI (EN + TR).**
+- [ ] **2. "Sürüm 2 henüz yayımlanmamıştır" cümleleri KALDIRILDI (EN + TR).** *(YAYIN GÜNÜ: `bash yayin-gunu.sh YYYY-MM-DD` — dört cümleyi kaldırır, tarihleri çeker; kopya üzerinde prova edildi 2026-09-02. Sürüm mağazada görünene kadar cümleler DOĞRUDUR ve kalır.)*
   - **Sahip:** Kaya (yayın metni).
   - **Yerler:**
     - `privacy.html` EN `.card` — ~37-38: "As of the last-updated date above, version 2 has not been released."
@@ -38,7 +38,7 @@ Satır numaraları yaklaşıktır (`~`); metin düzenlendikçe kayabilir, ilgili
   - **Not:** `index.html` bilinçli olarak yayın-durumu cümlesi taşımaz (sürüm-kapsamlı yazıldı);
     orada kaldırılacak bir cümle yoktur.
 
-- [ ] **3. Merge, 16C-γ apple-only uygulamaya İNDİKTEN SONRA yapılır.**
+- [x] **3. Merge, 16C-γ apple-only uygulamaya İNDİKTEN SONRA yapılır.** *(KAPANDI: 2.0.0 (100) kodunda tek giriş yolu Apple ile Giriş — sert kapı kurucu kararı 2026-08-31; OTP yok. V2 metni zaten `main`'de.)*
   - **Sahip:** Kaya (merge yetkisi).
   - **Neden kapı:** Metin "tek giriş yolu Apple ile Giriş'tir" diyor (`privacy.html` B2, `support.html`
     giriş SSS'i, `index.html` sürüm notu). Uygulama bugün hâlâ e-posta OTP kullanıyor; metin bu haliyle
@@ -134,7 +134,9 @@ Hosted'ın uyguladığı son migration hâlâ `20260803011904` (2026-08-04'te sa
 (`not_required`, `done`) dışındaki her durumu `'apple_revocation_pending'` ile reddediyor ve
 **silmiyor**. Site cümlesi bugün yayına çıkarsa, arka ucun **canlı** tarafının tutmadığı bir vaat olur.
 
-**Kapanış koşulu — ortama bakar, hash'e değil.** Arka uçta 24 saatlik borç zaman aşımı **yerel dalda
+**Kapanış koşulu — ortama bakar, hash'e değil.** ✅ **HOSTED'DA DOĞRULANDI (2026-09-02, MCP salt-okunur):** (a) `20260804134000` hosted tarihçesinde var, (b) `wpm5a-revocation-debt-escalation` cron'u `37 * * * *` aktif, (c) `ops_flags.wpm5a_deletion_escalation_enabled=true`. Üçü birden ölçüldü; cümle canlıda tutulabilir.
+
+*(Eski metin:)* Arka uçta 24 saatlik borç zaman aşımı **yerel dalda
 mevcuttur; hosted'a uygulandığı doğrulanana kadar bu doğrulama KAPANMAZ.** Doğrulanması gerekenler:
 (a) borç zaman aşımı migration'ı hosted'da uygulanmış, (b) saatlik eskalasyon cron kaydı hosted'da
 canlı, (c) `ops_flags.wpm5a_deletion_escalation_enabled` hosted'da `true` (fail-closed kill-switch).

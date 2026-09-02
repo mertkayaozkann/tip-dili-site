@@ -45,7 +45,7 @@
 
     <!-- ENGLISH -->
     <h1>Privacy Policy</h1>
-    <p class="faint">Last updated: 28 August 2026 · Applies to the iOS app "Tıp Dili" (bundle id <code>com.tipdili.app</code>) and its home-screen widget.</p>
+    <p class="faint">Last updated: 2 September 2026 · Applies to the iOS app "Tıp Dili" (bundle id <code>com.tipdili.app</code>) and its home-screen widget.</p>
     <p class="faint"><a href="#tr">Türkçe sürüm için tıklayın ↓</a></p>
 
     <div class="card">
@@ -166,21 +166,27 @@
       three introductory cards. If you would rather not keep a record on our server, you can delete your
       account from inside the app at any time (Profile → Account), which erases it.</p>
 
-    <h3>B5. Infrastructure we use</h3>
+    <h3>B5. Infrastructure we use, and where the data is kept</h3>
     <ul>
       <li><strong>Supabase</strong> (managed PostgreSQL and authentication) runs the account database
-        and the sign-in session.</li>
+        and the sign-in session. Our project is hosted in Supabase's <strong>eu-central-1</strong> region
+        — <strong>Frankfurt, Germany (EU)</strong>. Supabase's Data Processing Addendum forms part of its
+        terms and applies to our use of the service; for any transfer outside the EU it relies on the
+        EU Standard Contractual Clauses. Its sub-processor list is published at
+        <a href="https://supabase.com/legal/customer-resources/subprocessor-list">supabase.com</a>.</li>
       <li><strong>RevenueCat</strong> processes subscription events so that entitlement status stays
-        correct across renewals and restores.</li>
+        correct across renewals and restores. RevenueCat runs on Amazon Web Services and Snowflake in
+        the <strong>United States</strong>, so the subscription events it receives from Apple (never your
+        payment details) are processed there. RevenueCat's Data Processing Addendum forms part of its
+        terms and applies to our use of the service; its transfer safeguard is the EU Standard
+        Contractual Clauses.</li>
       <li><strong>Apple</strong> handles Sign in with Apple and, as in version 1.0.1, all payment.
-        We never receive your payment details.</li>
+        We never receive your payment details. What Apple does with your data is governed by Apple's own
+        privacy policy.</li>
     </ul>
-    <div class="note">
-      Where this data is stored geographically, and the data-processing agreements covering these
-      providers, are being finalised. We will publish those details on this page before version 2 is
-      released. Until they appear here, treat this section as naming the technology we use, not as a
-      statement about data location or international transfers.
-    </div>
+    <p>This section describes where our providers keep data and which agreements cover them, as verified
+      on 2 September 2026 against the providers' published terms and our project settings. If a provider
+      or region changes, this section is updated.</p>
 
     <h3>B6. Deleting your account</h3>
     <p>You can delete your account from inside the app: open <em>Profile → Account &amp; Data</em>, open
@@ -314,7 +320,7 @@
 
     <!-- TÜRKÇE -->
     <h1 id="tr">Gizlilik Politikası</h1>
-    <p class="faint">Son güncelleme: 28 Ağustos 2026 · "Tıp Dili" iOS uygulaması (paket kimliği <code>com.tipdili.app</code>) ve ana ekran widget'ı için geçerlidir.</p>
+    <p class="faint">Son güncelleme: 2 Eylül 2026 · "Tıp Dili" iOS uygulaması (paket kimliği <code>com.tipdili.app</code>) ve ana ekran widget'ı için geçerlidir.</p>
 
     <div class="card">
       <p class="u-mb12"><strong>Yürürlük — hangi bölüm size uygulanır?</strong> Bu politika
@@ -438,21 +444,28 @@
       kayıt tutulmasını istemiyorsanız hesabınızı uygulama içinden dilediğiniz an silebilirsiniz
       (Profil → Hesap); silme kaydı ortadan kaldırır.</p>
 
-    <h3>B5. Kullandığımız altyapı</h3>
+    <h3>B5. Kullandığımız altyapı ve verinin tutulduğu yer</h3>
     <ul>
       <li><strong>Supabase</strong> (yönetilen PostgreSQL ve kimlik doğrulama) hesap veritabanını ve
-        giriş oturumunu çalıştırır.</li>
+        giriş oturumunu çalıştırır. Projemiz Supabase'in <strong>eu-central-1</strong> bölgesinde —
+        <strong>Frankfurt, Almanya (AB)</strong> — barındırılır. Supabase'in Veri İşleme Eki (DPA) hizmet
+        koşullarının parçasıdır ve kullanımımıza uygulanır; AB dışına olası bir aktarım için AB Standart
+        Sözleşme Maddeleri'ne dayanır. Alt işleyici listesi
+        <a href="https://supabase.com/legal/customer-resources/subprocessor-list">supabase.com</a>'da
+        yayımlanır.</li>
       <li><strong>RevenueCat</strong> abonelik olaylarını işler; böylece yenileme ve geri yükleme
-        sonrasında hak durumu doğru kalır.</li>
+        sonrasında hak durumu doğru kalır. RevenueCat, Amazon Web Services ve Snowflake üzerinde
+        <strong>Amerika Birleşik Devletleri</strong>'nde çalışır; Apple'dan aldığı abonelik olayları
+        (ödeme bilgileriniz hiçbir zaman değil) orada işlenir. RevenueCat'in Veri İşleme Eki (DPA) hizmet
+        koşullarının parçasıdır ve kullanımımıza uygulanır; aktarım güvencesi AB Standart Sözleşme
+        Maddeleri'dir.</li>
       <li><strong>Apple</strong> hem Apple ile Giriş'i hem de — sürüm 1.0.1'de olduğu gibi — tüm ödeme
-        sürecini yürütür. Ödeme bilgileriniz bize hiçbir zaman ulaşmaz.</li>
+        sürecini yürütür. Ödeme bilgileriniz bize hiçbir zaman ulaşmaz; Apple'ın verinizle yaptıkları
+        Apple'ın kendi gizlilik politikasına tabidir.</li>
     </ul>
-    <div class="note">
-      Bu verinin coğrafi olarak nerede saklandığı ve bu sağlayıcıları kapsayan veri işleme
-      sözleşmeleri henüz kesinleştirilmektedir. Bu ayrıntıları, sürüm 2 yayımlanmadan önce bu sayfada
-      yayımlayacağız. Bu bilgiler burada görünene kadar bu bölümü, kullandığımız teknolojinin adı
-      olarak okuyun; veri konumu veya yurt dışına aktarım hakkında bir beyan olarak değil.
-    </div>
+    <p>Bu bölüm, sağlayıcılarımızın veriyi nerede tuttuğunu ve hangi sözleşmelerin geçerli olduğunu
+      anlatır; 2 Eylül 2026'da sağlayıcıların yayımlanmış koşullarına ve proje ayarlarımıza göre
+      doğrulanmıştır. Sağlayıcı ya da bölge değişirse bu bölüm güncellenir.</p>
 
     <h3>B6. Hesabınızı silmek</h3>
     <p>Hesabınızı uygulamanın içinden silebilirsiniz: <em>Profil → Hesap ve Veri</em>'yi açın, hesabınızı
